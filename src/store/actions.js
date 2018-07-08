@@ -1,2 +1,0 @@
-export const CHANGE_EMAIL = 'CHANGE_EMAIL'
-export const UPDATE_COUNTER = 'UPDATE_COUNTER'

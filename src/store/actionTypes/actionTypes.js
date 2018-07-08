@@ -1,0 +1,11 @@
+export const INCREMENT = 'INCREMENT'
+export const DECREMENT = 'DECREMENT'
+export const ADD_COUNTER = 'ADD_COUNTER'
+export const SUB_COUNTER = 'SUB_COUNTER'
+export const CHANGE_EMAIL = 'CHANGE_EMAIL'
+export const UPDATE_COUNTER = 'UPDATE_COUNTER'
+export const STORE_RESULTS = 'STORE_RESULTS'
+export const DELETE_RESULTS = 'DELETE_RESULTS'
+
+export const UPDATE_NAME = 'UPDATE_NAME'
+export const INC_COUNTER = 'INC_COUNTER'

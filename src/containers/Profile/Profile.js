@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { UPDATE_NAME, INC_COUNTER } from '../../store/actionTypes/actionTypes';
 
 class Profile extends Component {
 
@@ -25,15 +26,15 @@ class Profile extends Component {
 
 const mapStoretoProps = store => {
   return {
-    profileName: store.name,
-    profileEmail: store.email
+    profileName: store.pro.name,
+    profileEmail: store.pro.email
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateName: (v) => dispatch({type: 'UPDATE_NAME', data: v}),
-    inc: () => dispatch({type: 'INC_COUNTER'})
+    updateName: (v) => dispatch({type: UPDATE_NAME, data: v}),
+    inc: () => dispatch({type: INC_COUNTER})
   }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {UPDATE_COUNTER} from '../../store/actions'
+import {UPDATE_COUNTER} from '../../store/actionTypes/actionTypes'
 
 class Test extends Component {
   state = {

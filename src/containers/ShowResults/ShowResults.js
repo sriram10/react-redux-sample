@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import { DELETE_RESULTS } from '../../store/actionTypes/actionTypes';
 
 class ShowResults extends Component {
   render() {
@@ -20,14 +21,14 @@ class ShowResults extends Component {
 
 const mapStoreStateToProps = state => {
   return {
-    results: state.results
+    results: state.sum.results
   }
 }
 
 
 const mapDispatchToProps = dispatchEvent => {
   return {
-      OnDeleteResult: (value) => dispatchEvent({type: 'DELETE_RESULT', value})
+      OnDeleteResult: (value) => dispatchEvent({type: DELETE_RESULTS, value})
   }
 }
 

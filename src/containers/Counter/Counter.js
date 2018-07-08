@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import CounterControl from '../../components/CounterControl/CounterControl';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
 import Axios from 'axios';
+import { INCREMENT, DECREMENT, ADD_COUNTER, SUB_COUNTER, STORE_RESULTS, DELETE_RESULTS } from '../../store/actionTypes/actionTypes';
 
 class Counter extends Component {
     state = {
@@ -27,6 +28,8 @@ class Counter extends Component {
             case 'sub':
                 this.setState( ( prevState ) => { return { counter: prevState.counter - value } } )
                 break;
+            default:
+                break;
         }
     }
 
@@ -42,7 +45,6 @@ class Counter extends Component {
     render () {
         return (
             <div>
-                <h2>{this.props.e}</h2>
                 <CounterOutput value={this.props.counter} />
                 <CounterControl label="Increment" clicked={this.props.OnIncrementCounter}  />
                 <CounterControl label="Decrement" clicked={this.props.OnDecrementCounter}  />
@@ -59,19 +61,19 @@ class Counter extends Component {
 
 const mapStateToProps = storeState => {
     return {
-        counter: storeState.counter,
-        results: storeState.results
+        counter: storeState.sum.counter,
+        results: storeState.sum.results
     }
 }
 
 const mapDispatchToProps = dispatchEvent => {
     return {
-        OnIncrementCounter: () => dispatchEvent({type:'INCREMENT'}),
-        OnDecrementCounter: () => dispatchEvent({type:'DECREMENT'}),
-        OnAddCounter: (v) => dispatchEvent({type:'ADD', value: v}),
-        OnSubtractCounter: () => dispatchEvent({type:'SUBTRACT', value: 5}),
-        OnStoreResult: () => dispatchEvent({type: 'STORE_RESULT'}),
-        OnDeleteResult: (value) => dispatchEvent({type: 'DELETE_RESULT', value})
+        OnIncrementCounter: () => dispatchEvent({type:INCREMENT}),
+        OnDecrementCounter: () => dispatchEvent({type:DECREMENT}),
+        OnAddCounter: (v) => dispatchEvent({type:ADD_COUNTER, value: v}),
+        OnSubtractCounter: () => dispatchEvent({type:SUB_COUNTER, value: 5}),
+        OnStoreResult: () => dispatchEvent({type: STORE_RESULTS}),
+        OnDeleteResult: (value) => dispatchEvent({type: DELETE_RESULTS, value})
     }
 }
 

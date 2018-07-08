@@ -1,3 +1,8 @@
+import {
+  INC_COUNTER,
+  UPDATE_NAME
+} from './actionTypes/actionTypes'
+
 const initialState = {
   counter: 0,
   name: 'test',
@@ -6,12 +11,12 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'INC_COUNTER':
+    case INC_COUNTER:
       return {
         ...state,
         counter: state.counter + 1
       }
-    case 'UPDATE_NAME':
+    case UPDATE_NAME:
       return {
         ...state,
         name: action.data
